@@ -1,4 +1,4 @@
-let posts=[ ];
+let posts=[];
 
 const likedPostsId = [];
 const reportedPostsId = [];
@@ -16,7 +16,7 @@ const isLiked = (id) => {
 };
 
 const addToLiked = (id) => {
-    likedPostsId.plus(id); 
+    likedPostsId.push(id); 
     showPosts(posts);
 };
 
@@ -143,6 +143,10 @@ const showPosts = (posts) => {
 };
 
 const displayLikedPosts = () => {
+
+  const DLP = document.getElementById( "liked" );
+  DLP.innerHTML ="";
+
     const likedPosts = getLikedPosts();
     likedPosts.forEach((post) => {
         const div = createPost(post);
@@ -151,6 +155,11 @@ const displayLikedPosts = () => {
 };
 
 const displayReportedPosts = () => {
+
+  const DRP = document.getElementById( "reported" );
+  DRP.innerHTML ="";
+
+
     const reportedPosts = getReportedPosts();
     posts.forEach((post) => {
         const div = createPost(post);
